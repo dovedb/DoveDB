@@ -188,3 +188,6 @@ If you would like to add your organization to the list, please comment on our
 ## License
 
 Copyright (c) The Jaeger Authors. [Apache 2.0 License](./LICENSE).
+
+[ci-img]: https://github.com/jaegertracing/jaeger/workflows/Unit%20Tests/badge.svg?branch=main
+[slack-img]: https://img.shields.io/badge/slack-join%20chat%20%E2%86%92-brightgreen?logo=slack
