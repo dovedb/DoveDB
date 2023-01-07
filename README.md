@@ -2,7 +2,6 @@
 
 [![Slack chat][slack-img]](#get-in-touch)
 [![Unit Tests][ci-img]](#Modern Web UI)
-[![FOSSA Status](https://app.fossa.com/api/projects/.svg?type=large)](https://app.fossa.com/projects/?ref=badge_large)
 
 <img src="./figs/logo.jpg" width="250">
 
