@@ -1,44 +1,17 @@
-<img align="right" width="290" height="290" src="./figs/cartoon_logo.png">
+<img align="right" width="290" height="290" src="./cartoon_logo.png">
 
 [![Slack chat][slack-img]](#get-in-touch)
-[![Project+Community stats][community-badge]][community-stats]
-[![Unit Tests][ci-img]][ci]
-[![Coverage Status][cov-img]][cov]
-[![FOSSA Status][fossa-img]](https://app.fossa.io/projects/git%2Bgithub.com%2Fjaegertracing%2Fjaeger?ref=badge_shield)
-[![Artifact Hub][artifacthub-img]](https://artifacthub.io/packages/helm/jaegertracing/jaeger)
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/1273/badge)](https://bestpractices.coreinfrastructure.org/projects/1273)
+[![Unit Tests][ci-img]][https://github.com/dovedb/DoveDB]
+[![FOSSA Status](https://app.fossa.com/api/projects/.svg?type=large)](https://app.fossa.com/projects/?ref=badge_large)
 
-<img src="./figs/logo.jpg" width="250">
+<img src="./logo.jpg" width="250">
 
 # DoveDB - a Declarative and Low-Latency Video Database
 
-```mermaid
-graph TD
-    LIB --> |HTTP or gRPC| COLLECTOR
-    LIB["Jaeger Client (deprecated)"] --> |UDP| AGENT[Jaeger Agent]
-    %% AGENT --> |HTTP/sampling| LIB
-    AGENT --> |gRPC| COLLECTOR[Jaeger Collector]
-    %% COLLECTOR --> |gRPC/sampling| AGENT
-    SDK["OpenTelemetry SDK (recommended)"] --> |UDP| AGENT
-    SDK --> |HTTP or gRPC| COLLECTOR
-    COLLECTOR --> STORE[Storage]
-    COLLECTOR --> |gRPC| PLUGIN[Storage Plugin]
-    PLUGIN --> STORE
-    QUERY[Jaeger Query Service] --> STORE
-    QUERY --> |gRPC| PLUGIN
-    UI[Jaeger UI] --> |HTTP| QUERY
-    subgraph Application Host
-        subgraph User Application
-            LIB
-            SDK
-        end
-        AGENT
-    end
-```
+<img src="./framework.png" width="560">
 
-Jaeger, inspired by [Dapper][dapper] and [OpenZipkin](https://zipkin.io),
-is a distributed tracing platform created by [Uber Technologies][ubeross]
-and donated to [Cloud Native Computing Foundation](https://cncf.io).
+DoveDB, inspired by [Otif](https://favyen.com/otif.pdf) and [SRTracker](./technical report.pdf), is a systematic
+data management platform with high usability and low latency created by [DILAB](https://dilab-zju.github.io/).
 It can be used for monitoring microservices-based distributed systems:
 
   * Distributed context propagation
@@ -50,7 +23,9 @@ It can be used for monitoring microservices-based distributed systems:
 See also:
 
   * Jaeger [documentation][doc] for getting started, operational details, and other information.
-  * Blog post [Evolving Distributed Tracing at Uber](https://eng.uber.com/distributed-tracing/).
+  * Blog post [Evolving Distributed Tra
+  * 
+  * ng at Uber](https://eng.uber.com/distributed-tracing/).
   * Tutorial / walkthrough [Take Jaeger for a HotROD ride][hotrod-tutorial].
 
 Jaeger is hosted by the [Cloud Native Computing Foundation](https://cncf.io) (CNCF) as the 7th top-level project (graduated in October 2019). If you are a company that wants to help shape the evolution of technologies that are container-packaged, dynamically-scheduled and microservices-oriented, consider joining the CNCF. For details about who's involved and how Jaeger plays a role, read the CNCF [Jaeger incubation announcement](https://www.cncf.io/blog/2017/09/13/cncf-hosts-jaeger/) and [Jaeger graduation announcement](https://www.cncf.io/announcement/2019/10/31/cloud-native-computing-foundation-announces-jaeger-graduation/).
@@ -237,7 +212,6 @@ Copyright (c) The Jaeger Authors. [Apache 2.0 License](./LICENSE).
 [dapper]: https://research.google.com/pubs/pub36356.html
 [ubeross]: https://uber.github.io
 [community-badge]: https://img.shields.io/badge/Project+Community-stats-blue.svg
-[community-stats]: https://all.devstats.cncf.io/d/54/project-health?orgId=1&var-repogroup_name=Jaeger
 [hotrod-tutorial]: https://medium.com/jaegertracing/take-jaeger-for-a-hotrod-ride-233cf43e46c2
 [slack]: https://cloud-native.slack.com/archives/CGG7NFUJ3
 [slack-join]: https://slack.cncf.io
