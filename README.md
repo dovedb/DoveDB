@@ -9,7 +9,7 @@
 
 <img src="./figs/framework.png" width="560">
 
-DoveDB, inspired by [Otif](https://favyen.com/otif.pdf) and Multi-Object Tracking, is a systematic data management platform with high usability and low latency created by [DILAB](https://dilab-zju.github.io/). It is integrated with the following desirable features:
+DoveDB, inspired by [OTIF](https://favyen.com/otif.pdf) and Multi-Object Tracking, is a systematic data management platform with high usability and low latency created by [DILAB](https://dilab-zju.github.io/). It is integrated with the following desirable features:
 
   * Declarative query language
   * Spark data model
@@ -19,55 +19,100 @@ DoveDB, inspired by [Otif](https://favyen.com/otif.pdf) and Multi-Object Trackin
 
 The system framework of DoveDB is illustrated in the [Figure]("./figs/framework.png"). Towards uniform management of data sources in the format of video files or live streams, we build an abstract data model called VideoSource, which is essentially inherited from Spark’s RDD. A real-time video ingestion engine is developed to extract semantic information, including textual labels, visual features and spatio-temporal metadata. The output is then used to construct offline indexes to facilitate online query processing. DoveDB provides SQL-like syntax to support convenient model training and query processing. Users can train a visual model on specified table columns, where we assume the annotations are available. The trained model can be conceived as a user-defined function and deployed on a target VideoSource for online inference. We also provide built-in model compression techniques such as neural network pruning and knowledge distillation to reduce model size and accelerate inference speed. Our query processing engine, assisted by the constructed offline indexes, can support a diversified category of queries, including traditional selection, aggregation and join queries (which are referred as one-shot queries), as well as continuous queries deployed on video streams. In the following, we present the core modules in DoveDB. Due to space limit, some of the implementation details are provided in our [technical report](https://github.com/dovedb/DoveDB/blob/main/technical%20report.pdf).
 
-## Get Involved
+## Get Started & Involved
 
 DoveDB is an open source project with open governance. We welcome contributions from the community, and we hope you can help improve and extend the project. Below I present a system overview of DoveDB.
 
-## Data Model
+### Data Model
+----------
+DoveDB is built upon Spark and supports queries against historical data and streaming data. We customize RDD to derive an abstract data model called **VideoSource** to uniformly manage data sources in the format of video files or live streams. The following SQL statements are examples of encapsulating a disk file or a network live stream as **VideoSource**.
 
-DoveDB is built upon Spark and supports queries against historical data and streaming data. We customize RDD to derive an abstract data model called VideoSource to uniformly manage data sources in the format of video files or live streams. The following SQL statements are examples of encapsulating a disk file or a network live stream as VideoSource.
+	-- create VideoSource from an input file
+	CREATE VideoSource traffic_a
+		FROM FILE '/home/xzy/video-data/a.mp4';
+
+	-- create VideoSource from a network live stream
+	CREATE VideoSource traffic_b FROM CAMERA 'ip:port';
+
+In other words, **VideoSource** is the basic data structure in DoveDB to support query processing. It is a collection of videos that can be processed in parallel. The elements of VideoSource are processed from the first frame to the subsequent frames along the time axis through RDD transformation. This procedure is typically accompanied by calculation or memory persistence, which enables model inference, indexing and storage on each frame.
+
+### Query Language Syntax
+----------
+Several video database systems have extended SQL to VQL and provided declarative language for video data management and query processing. An example of selection query is illustrated in the following.
+
+	SELECT frame FROM source_name
+		WHERE CONTAINS(label, 'CAR')
+			AND confidence > 0.8
+		ORDER BY timestamp DESC;
+
+In this paper, we devise a more expressive language called VMQL, which augments existing VQL with functionalities for model-oriented management and convenient deployment. For instances, to train an object detection model for an out-of-vacabulary object type, we can use the following statement
+
+	CREATE YOLO model_name
+		ON DATA_TABLE(img_column, label_column);
+
+Here, we assume the training data have been annotated and stored in the database. The trained model is named and stored in our model corpus. It can be conceived as a user-defined function and applied on a VideoSource for visual inference:
+
+	CREATE MONITOR_EVENT event_name
+		USING model_name
+		ON DATA_SOURCE source_name;
+
+The above example shows how to create a monitoring event on a target VideoSource using our trained model.
+
+### Real-time Ingestion
+----------
+<img align="right" src="./figs/selection.png" width="250">
+<img align="right" src="./figs/aggregation.png" width="250">
+
+Since visual inference cost via deep learning models is expensive, similar to [OTIF](https://favyen.com/otif.pdf), we adopt down-sampling to reduce the number of accessed frames. To extract tracklets of moving objects within a VideoSource, we treat the tracking process as a pipeline of object detection and association, and optimize each module separately. we compare DoveDB with OTIF in terms of the trade-off between
+efficiency and query accuracy.
+
+### Offline Index Construction
+----------
+For each distinct moving object, we generate a tracklet represented by a sequence of bounding boxes across the video frames. From the bounding boxes, we can extract visual features of the object and leverage high-dimensional index to support vision-based similarity search. The object detection model (i.e., [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX) in our DoveDB) can also output the associated class labels, from which we build inverted index to preserve its associated video id and frame id. Furthermore, we can collect abundant spatio-temporal meta-data, including the location of cameras, the timestamps of video frames and the positions of the detected bounding boxes. These data, integrated with spatio-temporal indexes, can be used to support interesting location-aware queries or mining tasks.
+
+### Visual Model Management
+----------
+In DoveDB, a visual model is conceived as a user-defined function to perform a specified inference task, such as object detection, image classification, image segmentation, etc. DoveDB is integrated with built-in functions to train a new model from scratch or fine-tune an existing visual model with additional annotation data. In order to support model training and inference, the system integrates [PyTorch](https://pytorch.org/) as the deep learning framework and exposes batch data feeding API to support other machine learning frameworks.
+
+### Query Processing Engine
+----------
+With the textual, visual, and spatio-temporal indexes built from the extracted tracklets, online queries can be processed with very low latency. For instance, to retrieve video frames containing ambulance and firetruck, we can simply perform an intersection between the two inverted lists of these two labels. As another example, to estimate the traffic flow with a time period, we can leverage the spatial-temporal index to identify the relevant video frames and aggregate the number of distinct objects within these frames. If a query cannot be answered via the offline index and requires online inference, we also provide model compression techniques, including network pruning and knowledge distillation, to reduce model size and improve inference speed. Finally, our real-time ingestion scheme can be naturally used to support continuous object tracking queries.
+
 
 ## Modern Web UI
 
-Jaeger Web UI is implemented in Javascript using popular open source frameworks like React. Several performance
-improvements have been released in v1.0 to allow the UI to efficiently deal with large volumes of data and to display
-traces with tens of thousands of spans (e.g. we tried a trace with 80,000 spans).
+we show the user interface of DoveDB for declarative video query processing. The layout contains three main components, marked as zone A, B, and C, respectively
 
-## Cloud Native Deployment
+  * Textbox for command lines
+  * Parameter configuration panel
+  * Display panel for VMQL query results
 
-Jaeger backend is distributed as a collection of Docker images. The binaries support various configuration methods,
-including command line options, environment variables, and configuration files in multiple formats (yaml, toml, etc.).
+<img align="center" src="./figs/ui.png" width="1000">
 
-The recommended way to deploy Jaeger in a production Kubernetes cluster is via the [Jaeger Operator](https://github.com/jaegertracing/jaeger-operator).
+The DoveDB system supports a variety of scenarios, including model training or fine-tuning, specific queries in specific scenarios, etc.
 
-The Jaeger Operator provides a [CLI to generate](https://github.com/jaegertracing/jaeger-operator#experimental-generate-kubernetes-manifest-file) Kubernetes manifests from the Jaeger CR.
-This can be considered as an alternative source over plain Kubernetes manifest files.
-
-The Jaeger ecosystem also provides a [Helm chart](https://github.com/jaegertracing/helm-charts) as an alternative way to deploy Jaeger.
+  * Model training and inference
+  * Selection and aggregation queries
+  * Continuous query on video streams
+  * ... ...
 
 ## Related Repositories
 
 ### Documentation
 
-  * Published: https://www.jaegertracing.io/docs/
-  * Source: https://github.com/jaegertracing/documentation
-
-### Instrumentation Libraries
-
-Jaeger project recommends OpenTelemetry SDKs for instrumentation, instead of Jaeger's native SDKs [that are now deprecated](https://www.jaegertracing.io/docs/latest/client-libraries/#deprecating-jaeger-clients).
+  * Published in IEEE TKDE: [Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks](https://ieeexplore.ieee.org/abstract/document/9360523/)
+  * Published in AAAI 2023: Human-in-the-Loop Vehicle ReID
+  * Researching: [Sampling-Resilient Multi-Object Tracking](https://github.com/dovedb/DoveDB/blob/main/technical%20report.pdf)
 
 ### Deployment
 
-  * [Jaeger Operator for Kubernetes](https://github.com/jaegertracing/jaeger-operator#getting-started)
+  * It will be revealed later
 
 ### Components
 
- * [UI](https://github.com/jaegertracing/jaeger-ui)
- * [Data model](https://github.com/jaegertracing/jaeger-idl)
+ * [UI](https://github.com/dovedb/DoveDB)
+ * [Data model](https://github.com/dovedb/DoveDB)
 
-## Building From Source
-
-See [CONTRIBUTING](./CONTRIBUTING.md).
 
 ## Contributing
 
@@ -75,58 +120,29 @@ See [CONTRIBUTING](./CONTRIBUTING.md).
 
 Thanks to all the people who already contributed!
 
-<a href="https://github.com/jaegertracing/jaeger/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=jaegertracing/jaeger" />
-</a>
-
 ### Maintainers
 
-Rules for becoming a maintainer are defined in the [GOVERNANCE](./GOVERNANCE.md) document.
-Below are the official maintainers of the Jaeger project.
-Please use `@jaegertracing/jaeger-maintainers` to tag them on issues / PRs.
+Below are the official maintainers of the DoveDB project.
 
-* [@albertteoh](https://github.com/albertteoh)
-* [@joe-elliott](https://github.com/joe-elliott)
-* [@pavolloffay](https://github.com/pavolloffay)
-* [@yurishkuro](https://github.com/yurishkuro)
-
-Some repositories under [jaegertracing](https://github.com/jaegertracing) org have additional maintainers.
+* [@xiaoziyang](https://github.com/lzzppp)
+* [@lizepeng](https://github.com/xzy)
 
 ### Emeritus Maintainers
 
-We are grateful to our former maintainers for their contributions to the Jaeger project.
+We are grateful to our former maintainers for their contributions to the DoveDB project.
 
-* [@black-adder](https://github.com/black-adder)
-* [@jpkrohling](https://github.com/jpkrohling)
-* [@objectiser](https://github.com/objectiser)
-* [@tiffon](https://github.com/tiffon)
-* [@vprithvi](https://github.com/vprithvi)
-
-## Project Status Meetings
-
-The Jaeger maintainers and contributors meet regularly on a video call. Everyone is welcome to join, including end users. For meeting details, see https://www.jaegertracing.io/get-in-touch/.
-
-## Roadmap
-
-See https://www.jaegertracing.io/docs/roadmap/
+  * It will be revealed later
 
 ## Get in Touch
 
-Have questions, suggestions, bug reports? Reach the project community via these channels:
+Have questions, suggestions, bug reports? Reach the project community via these emails:
 
- * [Slack chat room `#jaeger`][slack] (need to join [CNCF Slack][slack-join] for the first time)
- * [`jaeger-tracing` mail group](https://groups.google.com/forum/#!forum/jaeger-tracing)
- * GitHub [issues](https://github.com/jaegertracing/jaeger/issues) and [discussions](https://github.com/jaegertracing/jaeger/discussions)
+* xiaoziyang@zju.edu.cn
+* lizepeng@zju.edu.cn
 
 ## Adopters
 
-Jaeger as a product consists of multiple components. We want to support different types of users,
-whether they are only using our instrumentation libraries or full end to end Jaeger installation,
-whether it runs in production or you use it to troubleshoot issues in development.
-
-Please see [ADOPTERS.md](./ADOPTERS.md) for some of the organizations using Jaeger today.
-If you would like to add your organization to the list, please comment on our
-[survey issue](https://github.com/jaegertracing/jaeger/issues/207).
+DoveDB as a product consists of multiple components. We want to support different types of users, whether they are only using our instrumentation libraries or full end to end DoveDB installation, whether it runs in production or you use it to troubleshoot issues in development.
 
 ## License
 
