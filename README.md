@@ -1,14 +1,14 @@
-<img align="right" width="290" height="290" src="./cartoon_logo.png">
+<img align="right" width="290" height="290" src="./figs/cartoon_logo.png">
 
 [![Slack chat][slack-img]](#get-in-touch)
 [![Unit Tests][ci-img]][https://github.com/dovedb/DoveDB]
 [![FOSSA Status](https://app.fossa.com/api/projects/.svg?type=large)](https://app.fossa.com/projects/?ref=badge_large)
 
-<img src="./logo.jpg" width="250">
+<img src="./figs/logo.jpg" width="250">
 
 # DoveDB - a Declarative and Low-Latency Video Database
 
-<img src="./framework.png" width="560">
+<img src="./figs/framework.png" width="560">
 
 DoveDB, inspired by [Otif](https://favyen.com/otif.pdf) and [SRTracker](./technical report.pdf), is a systematic
 data management platform with high usability and low latency created by [DILAB](https://dilab-zju.github.io/).
