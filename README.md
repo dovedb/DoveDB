@@ -1,7 +1,7 @@
 <img align="right" width="290" height="290" src="./figs/cartoon_logo.png">
 
 [![Slack chat][slack-img]](#get-in-touch)
-[![Unit Tests][ci-img]](#Modern Web UI)
+[![Unit Tests][ci-img]](https://github.com/dovedb/DoveDB)
 
 <img src="./figs/logo.jpg" width="250">
 
