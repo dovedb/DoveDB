@@ -9,24 +9,15 @@
 
 <img src="./figs/framework.png" width="560">
 
-DoveDB, inspired by [Otif](https://favyen.com/otif.pdf) and [Sampling-Resilient Multi-Object Tracking](https://github.com/dovedb/DoveDB/blob/main/technical%20report.pdf), is a systematic data management platform with high usability and low latency created by [DILAB](https://dilab-zju.github.io/).
-It can be used for monitoring microservices-based distributed systems:
+DoveDB, inspired by [Otif](https://favyen.com/otif.pdf) and [Sampling-Resilient Multi-Object Tracking](https://github.com/dovedb/DoveDB/blob/main/technical%20report.pdf), is a systematic data management platform with high usability and low latency created by [DILAB](https://dilab-zju.github.io/). It is integrated with the following desirable features:
 
-  * Distributed context propagation
-  * Distributed transaction monitoring
-  * Root cause analysis
-  * Service dependency analysis
-  * Performance / latency optimization
+  * Declarative query language
+  * Spark data model
+  * Lightweight ingestion scheme
+  * Versatile query scenarios
+  * Efficient query processing
 
-See also:
-
-  * Jaeger [documentation][doc] for getting started, operational details, and other information.
-  * Blog post [Evolving Distributed Tra
-  * 
-  * ng at Uber](https://eng.uber.com/distributed-tracing/).
-  * Tutorial / walkthrough [Take Jaeger for a HotROD ride][hotrod-tutorial].
-
-Jaeger is hosted by the [Cloud Native Computing Foundation](https://cncf.io) (CNCF) as the 7th top-level project (graduated in October 2019). If you are a company that wants to help shape the evolution of technologies that are container-packaged, dynamically-scheduled and microservices-oriented, consider joining the CNCF. For details about who's involved and how Jaeger plays a role, read the CNCF [Jaeger incubation announcement](https://www.cncf.io/blog/2017/09/13/cncf-hosts-jaeger/) and [Jaeger graduation announcement](https://www.cncf.io/announcement/2019/10/31/cloud-native-computing-foundation-announces-jaeger-graduation/).
+The system framework of DoveDB is illustrated in the [Figure]("./figs/framework.png"). Towards uniform management of data sources in the format of video files or live streams, we build an abstract data model called VideoSource, which is essentially inherited from Spark’s RDD. A real-time video ingestion engine is developed to extract semantic information, including textual labels, visual features and spatio-temporal metadata. The output is then used to construct offline indexes to facilitate online query processing. DoveDB provides SQL-like syntax to support convenient model training and query processing. Users can train a visual model on specified table columns, where we assume the annotations are available. The trained model can be conceived as a user-defined function and deployed on a target VideoSource for online inference. We also provide built-in model compression techniques such as neural network pruning and knowledge distillation to reduce model size and accelerate inference speed. Our query processing engine, assisted by the constructed offline indexes, can support a diversified category of queries, including traditional selection, aggregation and join queries (which are referred as one-shot queries), as well as continuous queries deployed on video streams. In the following, we present the core modules in DoveDB. Due to space limit, some of the implementation details are provided in our technical report1.
 
 ## Get Involved
 
@@ -197,20 +188,3 @@ If you would like to add your organization to the list, please comment on our
 ## License
 
 Copyright (c) The Jaeger Authors. [Apache 2.0 License](./LICENSE).
-
-[doc]: https://jaegertracing.io/docs/
-[godoc-img]: https://godoc.org/github.com/jaegertracing/jaeger?status.svg
-[godoc]: https://godoc.org/github.com/jaegertracing/jaeger
-[ci-img]: https://github.com/jaegertracing/jaeger/workflows/Unit%20Tests/badge.svg?branch=main
-[ci]: https://github.com/jaegertracing/jaeger/actions?query=branch%3Amain
-[cov-img]: https://codecov.io/gh/jaegertracing/jaeger/branch/main/graph/badge.svg
-[cov]: https://codecov.io/gh/jaegertracing/jaeger/branch/main/
-[fossa-img]: https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjaegertracing%2Fjaeger.svg?type=shield
-[artifacthub-img]: https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/jaeger
-[dapper]: https://research.google.com/pubs/pub36356.html
-[ubeross]: https://uber.github.io
-[community-badge]: https://img.shields.io/badge/Project+Community-stats-blue.svg
-[hotrod-tutorial]: https://medium.com/jaegertracing/take-jaeger-for-a-hotrod-ride-233cf43e46c2
-[slack]: https://cloud-native.slack.com/archives/CGG7NFUJ3
-[slack-join]: https://slack.cncf.io
-[slack-img]: https://img.shields.io/badge/slack-join%20chat%20%E2%86%92-brightgreen?logo=slack
