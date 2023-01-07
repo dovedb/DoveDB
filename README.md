@@ -9,8 +9,7 @@
 
 <img src="./figs/framework.png" width="560">
 
-DoveDB, inspired by [Otif](https://favyen.com/otif.pdf) and [SRTracker](./technical report.pdf), is a systematic
-data management platform with high usability and low latency created by [DILAB](https://dilab-zju.github.io/).
+DoveDB, inspired by [Otif](https://favyen.com/otif.pdf) and [SRTracker]([./technical report.pdf](https://github.com/dovedb/DoveDB/blob/main/technical%20report.pdf)), is a systematic data management platform with high usability and low latency created by [DILAB](https://dilab-zju.github.io/).
 It can be used for monitoring microservices-based distributed systems:
 
   * Distributed context propagation
