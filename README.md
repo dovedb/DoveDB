@@ -9,7 +9,7 @@
 
 <img src="./figs/framework.png" width="560">
 
-DoveDB, inspired by [Otif](https://favyen.com/otif.pdf) and [Sampling-Resilient Multi-Object Tracking](https://github.com/dovedb/DoveDB/blob/main/technical%20report.pdf), is a systematic data management platform with high usability and low latency created by [DILAB](https://dilab-zju.github.io/). It is integrated with the following desirable features:
+DoveDB, inspired by [Otif](https://favyen.com/otif.pdf) and Multi-Object Tracking, is a systematic data management platform with high usability and low latency created by [DILAB](https://dilab-zju.github.io/). It is integrated with the following desirable features:
 
   * Declarative query language
   * Spark data model
@@ -17,47 +17,23 @@ DoveDB, inspired by [Otif](https://favyen.com/otif.pdf) and [Sampling-Resilient 
   * Versatile query scenarios
   * Efficient query processing
 
-The system framework of DoveDB is illustrated in the [Figure]("./figs/framework.png"). Towards uniform management of data sources in the format of video files or live streams, we build an abstract data model called VideoSource, which is essentially inherited from Spark’s RDD. A real-time video ingestion engine is developed to extract semantic information, including textual labels, visual features and spatio-temporal metadata. The output is then used to construct offline indexes to facilitate online query processing. DoveDB provides SQL-like syntax to support convenient model training and query processing. Users can train a visual model on specified table columns, where we assume the annotations are available. The trained model can be conceived as a user-defined function and deployed on a target VideoSource for online inference. We also provide built-in model compression techniques such as neural network pruning and knowledge distillation to reduce model size and accelerate inference speed. Our query processing engine, assisted by the constructed offline indexes, can support a diversified category of queries, including traditional selection, aggregation and join queries (which are referred as one-shot queries), as well as continuous queries deployed on video streams. In the following, we present the core modules in DoveDB. Due to space limit, some of the implementation details are provided in our technical report1.
+The system framework of DoveDB is illustrated in the [Figure]("./figs/framework.png"). Towards uniform management of data sources in the format of video files or live streams, we build an abstract data model called VideoSource, which is essentially inherited from Spark’s RDD. A real-time video ingestion engine is developed to extract semantic information, including textual labels, visual features and spatio-temporal metadata. The output is then used to construct offline indexes to facilitate online query processing. DoveDB provides SQL-like syntax to support convenient model training and query processing. Users can train a visual model on specified table columns, where we assume the annotations are available. The trained model can be conceived as a user-defined function and deployed on a target VideoSource for online inference. We also provide built-in model compression techniques such as neural network pruning and knowledge distillation to reduce model size and accelerate inference speed. Our query processing engine, assisted by the constructed offline indexes, can support a diversified category of queries, including traditional selection, aggregation and join queries (which are referred as one-shot queries), as well as continuous queries deployed on video streams. In the following, we present the core modules in DoveDB. Due to space limit, some of the implementation details are provided in our [technical report](https://github.com/dovedb/DoveDB/blob/main/technical%20report.pdf).
 
 ## Get Involved
 
-Jaeger is an open source project with open governance. We welcome contributions from the community, and we would love your help to improve and extend the project. Here are [some ideas](https://www.jaegertracing.io/get-involved/) for how to get involved. Many of them do not even require any coding.
+DoveDB is an open source project with open governance. We welcome contributions from the community, and we hope you can help improve and extend the project. Below I present a system overview of DoveDB.
 
-## Features
+## Data Model
 
-### High Scalability
+DoveDB is built upon Spark and supports queries against historical data and streaming data. We customize RDD to derive an abstract data model called VideoSource to uniformly manage data sources in the format of video files or live streams. The following SQL statements are examples of encapsulating a disk file or a network live stream as VideoSource.
 
-Jaeger backend is designed to have no single points of failure and to scale with the business needs.
-For example, any given Jaeger installation at Uber is typically processing several billions of spans per day.
-
-### Native support for OpenTracing
-
-Jaeger backend, Web UI, and instrumentation libraries have been designed from the ground up to support the [OpenTracing standard](https://opentracing.io/specification/).
-  * Represent traces as directed acyclic graphs (not just trees) via [span references](https://github.com/opentracing/specification/blob/master/specification.md#references-between-spans)
-  * Support strongly typed span _tags_ and _structured logs_
-  * Support general distributed context propagation mechanism via _baggage_
-
-#### OpenTelemetry
-
-Jaeger project recommends OpenTelemetry SDKs for instrumentation, instead of Jaeger's native SDKs [that are now deprecated](https://www.jaegertracing.io/docs/latest/client-libraries/#deprecating-jaeger-clients).
-
-The OpenTracing and OpenCensus projects have merged into a new CNCF project called [OpenTelemetry](https://opentelemetry.io). The Jaeger and OpenTelemetry projects have different goals. OpenTelemetry aims to provide APIs and SDKs in multiple languages to allow applications to export various telemetry data out of the process, to any number of metrics and tracing backends. The Jaeger project is primarily the tracing backend that receives tracing telemetry data and provides processing, aggregation, data mining, and visualizations of that data. The Jaeger client libraries do overlap with OpenTelemetry in functionality. OpenTelemetry natively supports Jaeger as a tracing backend and makes Jaeger native clients unnecessary. For more information please refer to a blog post [Jaeger and OpenTelemetry](https://medium.com/jaegertracing/jaeger-and-opentelemetry-1846f701d9f2).
-
-### Multiple storage backends
-
-Jaeger can be used with a growing a number of storage backends:
-* It natively supports two popular open source NoSQL databases as trace storage backends: Cassandra and Elasticsearch.
-* It integrates via a gRPC API with other well known databases that have been certified to be Jaeger compliant: [TimescaleDB via Promscale](https://github.com/timescale/promscale), [ClickHouse](https://github.com/jaegertracing/jaeger-clickhouse).
-* There is embedded database support using [Badger](https://github.com/dgraph-io/badger) and simple in-memory storage for testing setups.
-* There are ongoing community experiments using other databases, such as ScyllaDB, InfluxDB, Amazon DynamoDB.
-
-### Modern Web UI
+## Modern Web UI
 
 Jaeger Web UI is implemented in Javascript using popular open source frameworks like React. Several performance
 improvements have been released in v1.0 to allow the UI to efficiently deal with large volumes of data and to display
 traces with tens of thousands of spans (e.g. we tried a trace with 80,000 spans).
 
-### Cloud Native Deployment
+## Cloud Native Deployment
 
 Jaeger backend is distributed as a collection of Docker images. The binaries support various configuration methods,
 including command line options, environment variables, and configuration files in multiple formats (yaml, toml, etc.).
@@ -68,39 +44,6 @@ The Jaeger Operator provides a [CLI to generate](https://github.com/jaegertracin
 This can be considered as an alternative source over plain Kubernetes manifest files.
 
 The Jaeger ecosystem also provides a [Helm chart](https://github.com/jaegertracing/helm-charts) as an alternative way to deploy Jaeger.
-
-### Observability
-
-All Jaeger backend components expose [Prometheus](https://prometheus.io/) metrics by default (other metrics backends are
-also supported). Logs are written to standard out using the structured logging library [zap](https://github.com/uber-go/zap).
-
-### Security
-
-Third-party security audits of Jaeger are available in https://github.com/jaegertracing/security-audits. Please see [Issue #1718](https://github.com/jaegertracing/jaeger/issues/1718) for the summary of available security mechanisms in Jaeger.
-
-### Backwards compatibility with Zipkin
-
-Although we recommend instrumenting applications with OpenTelemetry, if your organization has already invested in the instrumentation
-using Zipkin libraries, you do not have to rewrite all that code. Jaeger provides backwards compatibility with Zipkin
-by accepting spans in Zipkin formats (Thrift or JSON v1/v2) over HTTP. Switching from Zipkin backend is just a matter
-of routing the traffic from Zipkin libraries to the Jaeger backend.
-
-## Version Compatibility Guarantees
-
-Occasionally, CLI flags can be deprecated due to, for example, usability improvements or new functionality.
-In such situations, developers introducing the deprecation are required to follow [these guidelines](./CONTRIBUTING.md#deprecating-cli-flags).
-
-In short, for a deprecated CLI flag, you should expect to see the following message in the `--help` documentation:
-```
-(deprecated, will be removed after yyyy-mm-dd or in release vX.Y.Z, whichever is later)
-```
-
-A grace period of at least **3 months** or **two minor version bumps** (whichever is later) from the first release
-containing the deprecation notice will be provided before the deprecated CLI flag _can_ be deleted.
-
-For example, consider a scenario where v1.28.0 is released on 01-Jun-2021 containing a deprecation notice for a CLI flag.
-This flag will remain in a deprecated state until the later of 01-Sep-2021 or v1.30.0 where it _can_ be removed on or after either of those events.
-It may remain deprecated for longer than the aforementioned grace period.
 
 ## Related Repositories
 
