@@ -137,7 +137,7 @@ We are grateful to our former maintainers for their contributions to the DoveDB 
 
 Have questions, suggestions, bug reports? Reach the project community via these emails:
 
-* xiaoziyang@zju.edu.cn
+* xiaoziyang.xzy@gmail.com
 * lizepeng@zju.edu.cn
 
 ## Adopters
