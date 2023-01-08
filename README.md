@@ -7,7 +7,7 @@
 
 # DoveDB - a Declarative and Low-Latency Video Database
 
-<img src="./figs/framework.png" width="560">
+<img src="./figs/framework.png" width="550">
 
 DoveDB, inspired by [OTIF](https://favyen.com/otif.pdf) and Multi-Object Tracking, is a systematic data management platform with high usability and low latency created by [DILAB](https://dilab-zju.github.io/). It is integrated with the following desirable features:
 
