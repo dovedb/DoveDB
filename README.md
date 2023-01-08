@@ -83,9 +83,9 @@ With the textual, visual, and spatio-temporal indexes built from the extracted t
 
 we show the user interface of DoveDB for declarative video query processing. The layout contains three main components, marked as zone A, B, and C, respectively
 
-  * Textbox for command lines
-  * Parameter configuration panel
-  * Display panel for VMQL query results
+  A. Textbox for command lines
+  B. Parameter configuration panel
+  C. Display panel for VMQL query results
 
 <img align="center" src="./figs/ui.png" width="1000">
 
@@ -124,8 +124,8 @@ Thanks to all the people who already contributed!
 
 Below are the official maintainers of the DoveDB project.
 
-* [@xiaoziyang](https://github.com/lzzppp)
-* [@lizepeng](https://github.com/xzy)
+* [@xiaoziyang](https://github.com/xzymustbexzy)
+* [@lizepeng](https://github.com/lzzppp)
 
 ### Emeritus Maintainers
 
