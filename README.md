@@ -83,9 +83,17 @@ With the textual, visual, and spatio-temporal indexes built from the extracted t
 
 we show the user interface of DoveDB for declarative video query processing. The layout contains three main components, marked as zone A, B, and C, respectively
 
-  A. Textbox for command lines
-  B. Parameter configuration panel
-  C. Display panel for VMQL query results
+### A. Textbox for command lines
+
+Zone A is a **textbox for command lines** where users can interact with our system directly using VMQL statements. As shown in the figure, the user defines a traffic flow estimation event and mount it on a specified video stream. The statement indicates YOLOv5s as the object detector and the goal is to continuously maintains top-10 densest frames.
+
+### B. Parameter configuration panel
+
+Zone B is a **parameter configuration panel**. In its top area, users can select an existing video stream via the drop-down box or create a new stream by clicking the button ⊕. The streams with active monitoring events are listed and users can select one of them for detailed configuration, such as setting the ingesting speed, micro-batch size and hardware device, or determining the model for online inference. At the bottom of Zone B, the checkbox “Automatic Configuration” indicates whether the users allow the system to automatically determine the best trade-off between efficiency and accuracy. This step could be computationally expensive.
+
+### C. Display panel for VMQL query results
+
+Zone C is a **display panel for VMQL query results**. There are three sub-areas designed to provide different perspectives of query results. The center of display portal is designed to visualize overall detection results of each frame. On the right of Zone C, the top-10 frames selected by a query would be listed. The bottom part contains aggregation results on different lanes.
 
 <img align="center" src="./figs/ui.png" width="1000">
 
