@@ -23,6 +23,10 @@ The system framework of DoveDB is illustrated in the [Figure](https://github.com
 Here is a video to introduce our DoveDB system.  
 
 
+https://user-images.githubusercontent.com/29947288/212718051-7817603e-4589-4492-a9ff-ce157499903d.mp4
+
+
+
 ## Get Started & Involved
 
 DoveDB is an open source project with open governance. We welcome contributions from the community, and we hope you can help improve and extend the project. Below I present a system overview of DoveDB.
