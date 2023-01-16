@@ -3,7 +3,7 @@
 [![Slack chat][slack-img]](#get-in-touch)
 [![Unit Tests][ci-img]](https://github.com/dovedb/DoveDB)
 
-<img src="./figs/logo.jpg" width="250">
+<img src="./figs/logo设计DoveDB_v2横版.jpg" width="250">
 
 # DoveDB - a Declarative and Low-Latency Video Database
 
