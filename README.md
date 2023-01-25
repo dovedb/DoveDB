@@ -23,7 +23,7 @@ The system framework of DoveDB is illustrated in the [Figure](https://github.com
 Here is a video to introduce our DoveDB system.  
 
 
-https://user-images.githubusercontent.com/29947288/212718051-7817603e-4589-4492-a9ff-ce157499903d.mp4
+[![Demo video](https://img.youtube.com/vi/O6_9zCi1zUA/0.jpg)](https://www.youtube.com/watch?v=O6_9zCi1zUA)
 
 
 
