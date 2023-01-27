@@ -1,5 +1,3 @@
-<img align="right" width="290" height="290" src="./figs/cartoon_logo.png">
-
 [![Slack chat][slack-img]](#get-in-touch)
 [![Unit Tests][ci-img]](https://github.com/dovedb/DoveDB)
 
