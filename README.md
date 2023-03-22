@@ -20,36 +20,36 @@ Here is a video to introduce our DoveDB system.
   * Published in AAAI 2023: Human-in-the-Loop Vehicle ReID
   * Researching: [Sampling-Resilient Multi-Object Tracking](https://github.com/dovedb/DoveDB/blob/main/technical%20report.pdf)
 
-**Title**：Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks
+* **Title**：Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks
 
-**Journal**：*IEEE Transactions on Knowledge and Data Engineering（TKDE 2022）*
+  **Journal**：*IEEE Transactions on Knowledge and Data Engineering（TKDE 2022）*
 
-<!-- **Volume, issue, page number and date**：Volume: 34, Issue: 12, 01 December 2022
+  <!-- **Volume, issue, page number and date**：Volume: 34, Issue: 12, 01 December 2022
 
-**DOI**：[10.1109/TKDE.2021.3060790]([https://doi.org/10.1109/CST.2023.101101](https://doi.org/10.1109/TKDE.2021.3060790)) -->
+  **DOI**：[10.1109/TKDE.2021.3060790]([https://doi.org/10.1109/CST.2023.101101](https://doi.org/10.1109/TKDE.2021.3060790)) -->
 
-**Cite**: 
-```
-@article{DBLP:journals/tkde/ZhangLWTC22,
-  author    = {Dongxiang Zhang and
-               Zepeng Li and
-               Xiaoli Wang and
-               Kian{-}Lee Tan and
-               Gang Chen},
-  title     = {Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity
-               of Entity Resolution Tasks},
-  journal   = {{IEEE} Trans. Knowl. Data Eng.},
-  volume    = {34},
-  number    = {12},
-  pages     = {6018--6032},
-  year      = {2022},
-  url       = {https://doi.org/10.1109/TKDE.2021.3060790},
-  doi       = {10.1109/TKDE.2021.3060790},
-  timestamp = {Mon, 05 Dec 2022 13:33:51 +0100},
-  biburl    = {https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
-}
-```
+  **Cite**: 
+  ```
+  @article{DBLP:journals/tkde/ZhangLWTC22,
+    author    = {Dongxiang Zhang and
+                 Zepeng Li and
+                 Xiaoli Wang and
+                 Kian{-}Lee Tan and
+                 Gang Chen},
+    title     = {Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity
+                 of Entity Resolution Tasks},
+    journal   = {{IEEE} Trans. Knowl. Data Eng.},
+    volume    = {34},
+    number    = {12},
+    pages     = {6018--6032},
+    year      = {2022},
+    url       = {https://doi.org/10.1109/TKDE.2021.3060790},
+    doi       = {10.1109/TKDE.2021.3060790},
+    timestamp = {Mon, 05 Dec 2022 13:33:51 +0100},
+    biburl    = {https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib},
+    bibsource = {dblp computer science bibliography, https://dblp.org}
+  }
+  ```
 
 **Title**：Human-in-the-Loop Vehicle ReID
 
