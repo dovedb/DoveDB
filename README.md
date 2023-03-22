@@ -20,6 +20,15 @@ Here is a video to introduce our DoveDB system.
   * Published in AAAI 2023: Human-in-the-Loop Vehicle ReID
   * Researching: [Sampling-Resilient Multi-Object Tracking](https://github.com/dovedb/DoveDB/blob/main/technical%20report.pdf)
 
+**Title**：Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks
+
+**Journal**：*IEEE Transactions on Knowledge and Data Engineering*
+
+**Volume, issue, page number and date**：Volume: 34, Issue: 12, 01 December 2022
+
+**DOI**：[10.1109/TKDE.2021.3060790]([https://doi.org/10.1109/CST.2023.101101](https://doi.org/10.1109/TKDE.2021.3060790))
+
+
 ### Maintainers
 
 Below are the official maintainers of the DoveDB project.
