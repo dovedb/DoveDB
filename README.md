@@ -57,6 +57,7 @@ Here is a video to introduce our DoveDB system.
 
 **PDF**: [Human-in-the-Loop Vehicle ReID](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf)
 
+**Cite**: Waiting for manuscript
 
 ### Maintainers
 
