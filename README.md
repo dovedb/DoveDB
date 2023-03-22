@@ -18,17 +18,9 @@ Here is a video to introduce our DoveDB system.
 
 ### 2022
 
-1. *Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks*.
+1. *Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks*. TKDE. [[pdf]](https://ieeexplore.ieee.org/abstract/document/9360523/) [[bibtex]](https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib?param=1)
 
-   **Dongxiang Zhang**, Zepeng Li, Xiaoli Wang, Kian-Lee Tan, Gang Chen. 
-   
-   IEEE Transactions on Data and Engineering (TKDE). [[Link]](https://ieeexplore.ieee.org/abstract/document/9360523/) [[bibtex]](https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib?param=1)
-
-2. *Human-in-the-Loop Vehicle ReID*.
-
-   Zepeng Li, **Dongxiang Zhang**, Yanyan Shen, Gang Chen.  
-   
-   Association for the Advancement of Artificial Intelligence (AAAI). [[Link]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf) [[bibtex]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf)
+2. *Human-in-the-Loop Vehicle ReID*. AAAI. [[pdf]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf) [[bibtex]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf)
 
 ### Maintainers
 
