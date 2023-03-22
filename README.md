@@ -25,6 +25,9 @@ Here is a video to introduce our DoveDB system.
   **DOI**：[10.1109/TKDE.2021.3060790]([https://doi.org/10.1109/CST.2023.101101](https://doi.org/10.1109/TKDE.2021.3060790)) -->
 
   **Cite**: 
+  
+  <details>
+  <summary>Cite</summary>
   ```
   @article{DBLP:journals/tkde/ZhangLWTC22,
     author    = {Dongxiang Zhang and
@@ -46,6 +49,8 @@ Here is a video to introduce our DoveDB system.
     bibsource = {dblp computer science bibliography, https://dblp.org}
   }
   ```
+  </details>
+
 
 * **Title**：Human-in-the-Loop Vehicle ReID
 
