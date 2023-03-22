@@ -29,7 +29,7 @@ Here is a video to introduce our DoveDB system.
 **DOI**：[10.1109/TKDE.2021.3060790]([https://doi.org/10.1109/CST.2023.101101](https://doi.org/10.1109/TKDE.2021.3060790))
 
 **Cite**: 
-
+```
 @article{DBLP:journals/tkde/ZhangLWTC22,
   author    = {Dongxiang Zhang and
                Zepeng Li and
@@ -49,6 +49,7 @@ Here is a video to introduce our DoveDB system.
   biburl    = {https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib},
   bibsource = {dblp computer science bibliography, https://dblp.org}
 }
+```
 
 
 
