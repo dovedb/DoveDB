@@ -8,7 +8,9 @@
 <img src="./figs/framework.png" width="520">
 
 ## Video Demo
-Here is a video to introduce our DoveDB system.  
+Here is a video to introduce our DoveDB system. 
+
+[![Demo video](https://img.youtube.com/vi/O6_9zCi1zUA/0.jpg)](https://www.youtube.com/watch?v=O6_9zCi1zUA)
 
 ## Related Repositories
 
