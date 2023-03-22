@@ -55,7 +55,7 @@ Here is a video to introduce our DoveDB system.
 
 **Journal**：*Association for the Advancement of Artificial Intelligence（AAAI 2023）*
 
-**PDF**: [Human-in-the-Loop Vehicle ReID]()
+**PDF**: [Human-in-the-Loop Vehicle ReID](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf)
 
 
 ### Maintainers
