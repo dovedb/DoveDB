@@ -16,51 +16,19 @@ Here is a video to introduce our DoveDB system.
 
 ### Documentation
 
-* **Title**：Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks
+### 2022
 
-  **Journal**：*IEEE Transactions on Knowledge and Data Engineering（TKDE 2022）*
+1. *Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks*.
 
-  <!-- **Volume, issue, page number and date**：Volume: 34, Issue: 12, 01 December 2022
+   **Dongxiang Zhang**, Zepeng Li, Xiaoli Wang, Kian-Lee Tan, Gang Chen. 
+   
+   IEEE Transactions on Data and Engineering (TKDE). [[Link]](https://ieeexplore.ieee.org/abstract/document/9360523/) [[bibtex]](https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib?param=1)
 
-  **DOI**：[10.1109/TKDE.2021.3060790]([https://doi.org/10.1109/CST.2023.101101](https://doi.org/10.1109/TKDE.2021.3060790)) -->
+2. *Human-in-the-Loop Vehicle ReID*.
 
-  **Cite**: 
-  
-  <details>
-  <summary>Cite</summary>
-  ```
-  @article{DBLP:journals/tkde/ZhangLWTC22,
-    author    = {Dongxiang Zhang and
-                 Zepeng Li and
-                 Xiaoli Wang and
-                 Kian{-}Lee Tan and
-                 Gang Chen},
-    title     = {Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity
-                 of Entity Resolution Tasks},
-    journal   = {{IEEE} Trans. Knowl. Data Eng.},
-    volume    = {34},
-    number    = {12},
-    pages     = {6018--6032},
-    year      = {2022},
-    url       = {https://doi.org/10.1109/TKDE.2021.3060790},
-    doi       = {10.1109/TKDE.2021.3060790},
-    timestamp = {Mon, 05 Dec 2022 13:33:51 +0100},
-    biburl    = {https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib},
-    bibsource = {dblp computer science bibliography, https://dblp.org}
-  }
-  ```
-  </details>
-
-
-* **Title**：Human-in-the-Loop Vehicle ReID
-
-  **Journal**：*Association for the Advancement of Artificial Intelligence（AAAI 2023）*
-
-  **PDF**: [Human-in-the-Loop Vehicle ReID](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf)
-
-  **Cite**: Waiting for manuscript
-  
-* **Researching**: [Sampling-Resilient Multi-Object Tracking](https://github.com/dovedb/DoveDB/blo)
+   Zepeng Li, **Dongxiang Zhang**, Yanyan Shen, Gang Chen.  
+   
+   Association for the Advancement of Artificial Intelligence (AAAI). [[Link]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf) [[bibtex]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf)
 
 ### Maintainers
 
