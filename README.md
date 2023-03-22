@@ -22,7 +22,7 @@ Here is a video to introduce our DoveDB system.
 
 **Title**：Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks
 
-**Journal**：*IEEE Transactions on Knowledge and Data Engineering（TKDE）*
+**Journal**：*IEEE Transactions on Knowledge and Data Engineering（TKDE 2022）*
 
 <!-- **Volume, issue, page number and date**：Volume: 34, Issue: 12, 01 December 2022
 
@@ -53,7 +53,7 @@ Here is a video to introduce our DoveDB system.
 
 **Title**：Human-in-the-Loop Vehicle ReID
 
-**Journal**：*Association for the Advancement of Artificial Intelligence（AAAI）*
+**Journal**：*Association for the Advancement of Artificial Intelligence（AAAI 2023）*
 
 **PDF**: [Human-in-the-Loop Vehicle ReID]()
 
