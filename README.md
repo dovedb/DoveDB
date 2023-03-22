@@ -16,10 +16,6 @@ Here is a video to introduce our DoveDB system.
 
 ### Documentation
 
-  * Published in IEEE TKDE: [Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks](https://ieeexplore.ieee.org/abstract/document/9360523/)
-  * Published in AAAI 2023: Human-in-the-Loop Vehicle ReID
-  * Researching: [Sampling-Resilient Multi-Object Tracking](https://github.com/dovedb/DoveDB/blob/main/technical%20report.pdf)
-
 * **Title**：Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks
 
   **Journal**：*IEEE Transactions on Knowledge and Data Engineering（TKDE 2022）*
@@ -51,13 +47,15 @@ Here is a video to introduce our DoveDB system.
   }
   ```
 
-**Title**：Human-in-the-Loop Vehicle ReID
+* **Title**：Human-in-the-Loop Vehicle ReID
 
-**Journal**：*Association for the Advancement of Artificial Intelligence（AAAI 2023）*
+  **Journal**：*Association for the Advancement of Artificial Intelligence（AAAI 2023）*
 
-**PDF**: [Human-in-the-Loop Vehicle ReID](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf)
+  **PDF**: [Human-in-the-Loop Vehicle ReID](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf)
 
-**Cite**: Waiting for manuscript
+  **Cite**: Waiting for manuscript
+  
+* **Researching**: [Sampling-Resilient Multi-Object Tracking](https://github.com/dovedb/DoveDB/blo)
 
 ### Maintainers
 
