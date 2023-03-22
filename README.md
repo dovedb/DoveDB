@@ -24,9 +24,9 @@ Here is a video to introduce our DoveDB system.
 
 **Journal**：*IEEE Transactions on Knowledge and Data Engineering（TKDE）*
 
-**Volume, issue, page number and date**：Volume: 34, Issue: 12, 01 December 2022
+<!-- **Volume, issue, page number and date**：Volume: 34, Issue: 12, 01 December 2022
 
-**DOI**：[10.1109/TKDE.2021.3060790]([https://doi.org/10.1109/CST.2023.101101](https://doi.org/10.1109/TKDE.2021.3060790))
+**DOI**：[10.1109/TKDE.2021.3060790]([https://doi.org/10.1109/CST.2023.101101](https://doi.org/10.1109/TKDE.2021.3060790)) -->
 
 **Cite**: 
 ```
@@ -50,9 +50,6 @@ Here is a video to introduce our DoveDB system.
   bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 ```
-
-
-
 
 **Title**：Human-in-the-Loop Vehicle ReID
 
