@@ -71,13 +71,5 @@ Have questions, suggestions, bug reports? Reach the project community via these 
 * xiaoziyang.xzy@gmail.com
 * lizepeng@zju.edu.cn
 
-## Adopters
-
-DoveDB as a product consists of multiple components. We want to support different types of users, whether they are only using our instrumentation libraries or full end to end DoveDB installation, whether it runs in production or you use it to troubleshoot issues in development.
-
-## License
-
-Copyright (c) The Jaeger Authors. [Apache 2.0 License](./LICENSE).
-
 [ci-img]: https://github.com/jaegertracing/jaeger/workflows/Unit%20Tests/badge.svg?branch=main
 [slack-img]: https://img.shields.io/badge/slack-join%20chat%20%E2%86%92-brightgreen?logo=slack
