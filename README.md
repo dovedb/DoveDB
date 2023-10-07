@@ -18,9 +18,11 @@ Here is a video to introduce our DoveDB system.
 
 ### 2022
 
-1. *Human-in-the-Loop Vehicle ReID*. AAAI 2023. [[pdf]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf) [[bibtex]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf)
+1. *DoveDB: A Declarative and Low-Latency Video Database*. VLDB 2023 demo. [[pdf]](https://www.vldb.org/pvldb/vol16/p3906-zhang.pdf)
 
-2. *Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks*. TKDE 2022. [[pdf]](https://ieeexplore.ieee.org/abstract/document/9360523/) [[bibtex]](https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib?param=1) 
+2. *Human-in-the-Loop Vehicle ReID*. AAAI 2023. [[pdf]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf) [[bibtex]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf)
+
+3. *Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks*. TKDE 2022. [[pdf]](https://ieeexplore.ieee.org/abstract/document/9360523/) [[bibtex]](https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib?param=1) 
 
 ### Maintainers
 
@@ -28,6 +30,13 @@ Below are the official maintainers of the DoveDB project.
 
 * [@xiaoziyang](https://github.com/xzymustbexzy)
 * [@lizepeng](https://github.com/lzzppp)
+
+## Contribute
+We greatly value your contributions and are committed to making your involvement with DoveDB as straightforward and transparent as possible. 
+
+## License
+
+**Apache-2.0 License**: Our open-source software is made available under the Apache-2.0 license, which is approved by the Open Source Initiative (OSI). This open-source license encourages collaboration and knowledge sharing and is particularly suitable for students and enthusiasts who want to contribute and utilize our software.
 
 ## Get in Touch
 
