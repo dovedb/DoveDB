@@ -5,18 +5,19 @@
 
 # DoveDB - a Declarative and Low-Latency Video Database
 
-<img src="./figs/framework.png" width="520">
+DoveDB 🕊️ is a database for intelligent video data management and analysis. Drawing inspiration from the world's most advanced vision AI methods, DoveDB represents a significant leap forward in open-source research and development in the field of video data handling.
+
+<!-- <img src="./figs/framework.png" width="520"> -->
 
 ## Video Demo
 Here is a video to introduce our DoveDB system. 
 
-[![Demo video](https://img.youtube.com/vi/O6_9zCi1zUA/0.jpg)](https://www.youtube.com/watch?v=O6_9zCi1zUA)
+[![Demo video](https://img.youtube.com/vi/O6_9zCi1zUA/0.jpg)](https://www.youtube.com/watch?v=N139dEyvAJk)
 
-## Related Repositories
+## Documentation
 
-### Documentation
 
-### 2022
+## Publishment
 
 1. *DoveDB: A Declarative and Low-Latency Video Database*. VLDB 2023 demo. [[pdf]](https://www.vldb.org/pvldb/vol16/p3906-zhang.pdf)
 
@@ -24,7 +25,7 @@ Here is a video to introduce our DoveDB system.
 
 3. *Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks*. TKDE 2022. [[pdf]](https://ieeexplore.ieee.org/abstract/document/9360523/) [[bibtex]](https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib?param=1) 
 
-### Maintainers
+## Maintainers
 
 Below are the official maintainers of the DoveDB project.
 
