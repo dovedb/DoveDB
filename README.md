@@ -12,7 +12,7 @@ DoveDB 🕊️ is a database for intelligent video data management and analysis.
 ## Video Demo
 Here is a video to introduce our DoveDB system. 
 
-[![Demo video](https://img.youtube.com/vi/N139dEyvAJk/0.jpg)](https://www.youtube.com/watch?v=N139dEyvAJk)
+[![Demo video](./figs/video_play.png)](https://www.youtube.com/watch?v=N139dEyvAJk)
 
 ## Documentation
 
