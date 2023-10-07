@@ -43,15 +43,11 @@ Open your web browser and access `127.0.0.1:5000` to access the web interface.
 
 3. *Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks*. TKDE 2022. [[pdf]](https://ieeexplore.ieee.org/abstract/document/9360523/) [[bibtex]](https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib?param=1) 
 
-## Maintainers
-
-Below are the official maintainers of the DoveDB project.
-
-* [@xiaoziyang](https://github.com/xzymustbexzy)
-* [@lizepeng](https://github.com/lzzppp)
 
 ## Contribute
 We greatly value your contributions and are committed to making your involvement with DoveDB as straightforward and transparent as possible. 
+
+<img src="./figs/contributers.png" width="250">
 
 ## License
 
