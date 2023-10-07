@@ -47,7 +47,7 @@ Open your web browser and access `127.0.0.1:5000` to access the web interface.
 ## Contribute
 We greatly value your contributions and are committed to making your involvement with DoveDB as straightforward and transparent as possible. 
 
-<img src="./figs/contributers.png" width="250">
+<img src="./figs/contributers.png" width="400">
 
 ## License
 
