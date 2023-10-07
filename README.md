@@ -14,8 +14,26 @@ Here is a video to introduce our DoveDB system.
 
 [![Demo video](./figs/video_play.png)](https://www.youtube.com/watch?v=N139dEyvAJk)
 
-## Documentation
+## Quick Start
 
+Here are some common operations for DoveDB:
+
+1. Run DoveDB Server
+```bash
+python run_server.py
+```
+
+2. Upload video
+```bash
+python video_upload.py
+```
+
+3. Start web interface
+First, make sure that Node.js is installed on your local machine. Then, use the following command:
+```bash
+npm run start:dev
+```
+Open your web browser and access `127.0.0.1:5000` to access the web interface.
 
 ## Publishment
 
