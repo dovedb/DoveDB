@@ -35,13 +35,15 @@ npm run start:dev
 ```
 Open your web browser and access `127.0.0.1:5000` to access the web interface.
 
-## Publishment
+## Publications
 
 1. *DoveDB: A Declarative and Low-Latency Video Database*. VLDB 2023 demo. [[pdf]](https://www.vldb.org/pvldb/vol16/p3906-zhang.pdf)
 
 2. *Human-in-the-Loop Vehicle ReID*. AAAI 2023. [[pdf]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf) [[bibtex]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf)
 
 3. *Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks*. TKDE 2022. [[pdf]](https://ieeexplore.ieee.org/abstract/document/9360523/) [[bibtex]](https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib?param=1) 
+
+4. *Co-movement Pattern Mining from Videos*. VLDB 2024 [[pdf]](https://browse.arxiv.org/pdf/2308.05370.pdf) [[bibtex]](https://dblp.org/rec/journals/corr/abs-2308-05370.html?view=bibtex) 
 
 
 ## Contribute
