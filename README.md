@@ -91,7 +91,7 @@ SELECT frameid, COUNT(track_id) as car_count FROM cars GROUP BY frameid ORDER BY
 
 3. *Human-in-the-Loop Vehicle ReID*. AAAI 2023. [[pdf]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf) [[cite]](https://researchr.org/publication/LiZS023-0/bibtex)
 
-4. *Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks*. TKDE 2022. [[cite]](https://ieeexplore.ieee.org/abstract/document/9360523/) [[bibtex]](https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib?param=1)
+4. *Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks*. TKDE 2022. [[pdf]](https://ieeexplore.ieee.org/abstract/document/9360523/) [[cite]](https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib?param=1)
 
 
 ## Contribute
