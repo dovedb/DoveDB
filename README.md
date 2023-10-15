@@ -16,24 +16,72 @@ Here is a video to introduce our DoveDB system.
 
 ## Quick Start
 
-Here are some common operations for DoveDB:
+To get started with DoveDB and experience its core features, you can use the MVP version of DoveDB available in [This repository](https://github.com/dovedb/DoveDB_MVP).
 
-1. Run DoveDB Server
+### Requirements
+
+1. Clone the repository
 ```bash
-python run_server.py
+git clone https://github.com/dovedb/DoveDB_MVP.git
 ```
 
-2. Upload video
+2. Ensure either `OpenGauss` or `PostgreSQL` is installed.
+
+You have two options for installing the database management system as the engine of index storage: `OpenGauss` or `PostgreSQL`. Choose the one that best suits your needs.
+
+- Option1: `OpenGauss`
+
+To install `OpenGauss`, please follow the installation instructions provided in the [official documentation](https://docs.opengauss.org/zh/docs/3.1.0/docs/installation/installation.html).
+
+- Option2: `PostgreSQL`
+
+Alternatively, you can install `PostgreSQL` by following the steps outlined in the official PostgreSQL documentation. You can find the [installation guide here](https://www.postgresql.org/download/).
+
+3. Install the necessary dependencies provided in the requirements.txt.
 ```bash
-python video_upload.py
+cd src && pip install -r requirements.txt 
 ```
 
-3. Start web interface
-First, make sure that Node.js is installed on your local machine. Then, use the following command:
-```bash
-npm run start:dev
+### Usage
+
+1. Download the provided ETL (Extract, Transform, Load) data which will be used for demonstration purposes.
+
+[Download ETL Data Here](https://drive.google.com/file/d/1KGcr2wEF9_9s_YRgSI30Uwk4QfPCCuyp/view?usp=sharing)
+
+Once downloaded, move the file to the src/data directory.
+
+2. Launch DoveDB Server
+Navigate to the `src` directory and start the server:
+```python
+cd src
+python run_server.py --load_etl_data data/parsed.json
 ```
-Open your web browser and access `127.0.0.1:5000` to access the web interface.
+
+3. Launch DoveDB Client
+In another terminal instance, initiate the client:
+```python
+cd src
+python client.py
+```
+
+4. Aggregation Query:
+
+Count Cars in the First 120 Seconds:
+```sql
+SELECT COUNT(DISTINCT track_id) FROM cars WHERE timestamp < 120 AND confidence > 0.7;
+```
+
+Calculate Stay Duration of a Specific Car:
+```sql
+SELECT MAX(timestamp) - MIN(timestamp) as stay_duration FROM cars WHERE track_id = 20;
+```
+
+5. Selection Query:
+
+Top Frames with Most Cars:
+```sql
+SELECT frameid, COUNT(track_id) as car_count FROM cars GROUP BY frameid ORDER BY car_count DESC LIMIT 5;
+```
 
 ## Publications
 
