@@ -85,15 +85,13 @@ SELECT frameid, COUNT(track_id) as car_count FROM cars GROUP BY frameid ORDER BY
 
 ## Publications
 
-1. *DoveDB: A Declarative and Low-Latency Video Database*. VLDB 2023 demo. [[pdf]](https://www.vldb.org/pvldb/vol16/p3906-zhang.pdf)
+1. *Co-movement Pattern Mining from Videos*. VLDB 2024 [[pdf]](https://browse.arxiv.org/pdf/2308.05370.pdf) [[cite]](https://dblp.org/rec/journals/corr/abs-2308-05370.html?view=bibtex) 
 
-2. *Human-in-the-Loop Vehicle ReID*. AAAI 2023. [[pdf]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf) [[bibtex]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf)
+2. *DoveDB: A Declarative and Low-Latency Video Database*. VLDB 2023 demo. [[pdf]](https://www.vldb.org/pvldb/vol16/p3906-zhang.pdf) [[cite]](https://dl.acm.org/doi/10.14778/3611540.3611582)
 
-3. *Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks*. TKDE 2022. [[pdf]](https://ieeexplore.ieee.org/abstract/document/9360523/) [[bibtex]](https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib?param=1)
+3. *Human-in-the-Loop Vehicle ReID*. AAAI 2023. [[pdf]](https://github.com/dovedb/DoveDB/blob/main/Documentation/hitl_aaai.pdf) [[cite]](https://researchr.org/publication/LiZS023-0/bibtex)
 
-4. *Co-movement Pattern Mining from Videos*. VLDB 2024 [[pdf]](https://browse.arxiv.org/pdf/2308.05370.pdf) [[bibtex]](https://dblp.org/rec/journals/corr/abs-2308-05370.html?view=bibtex) 
-
-4. *Co-movement Pattern Mining from Videos*. VLDB 2024 [[pdf]](https://browse.arxiv.org/pdf/2308.05370.pdf) [[bibtex]](https://dblp.org/rec/journals/corr/abs-2308-05370.html?view=bibtex) 
+4. *Towards One-Size-Fits-Many: Multi-Context Attention Network for Diversity of Entity Resolution Tasks*. TKDE 2022. [[cite]](https://ieeexplore.ieee.org/abstract/document/9360523/) [[bibtex]](https://dblp.org/rec/journals/tkde/ZhangLWTC22.bib?param=1)
 
 
 ## Contribute
